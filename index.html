@@ -70,9 +70,8 @@
       pointer-events: none;
     }
     #splash img {
-      width: 120px;
+      width: min(200px, 50vw);
       height: auto;
-      image-rendering: auto;
       animation: splashPrepo 1.4s cubic-bezier(0.34, 1.56, 0.64, 1) both;
     }
     #splash-label {
@@ -348,9 +347,9 @@
 </head>
 <body>
 
-  <!-- SPLASH: img src preenchido por JS via hero img -->
+  <!-- SPLASH -->
   <div id="splash">
-    <img id="splash-prepo" alt="Prepo">
+    <img id="splash-prepo" src="prepo-hd.png" alt="Prepo">
     <div id="splash-label">sabendo<span>.</span></div>
   </div>
 
@@ -416,9 +415,6 @@
   </footer>
 
   <script>
-    // Copia o src do hero para o splash
-    document.getElementById('splash-prepo').src = document.getElementById('hero-prepo').src;
-
     // Scroll hint: aparece após animação, some ao rolar
     const hint = document.querySelector('.scroll-hint');
     setTimeout(() => hint.classList.add('visible'), 2800);
