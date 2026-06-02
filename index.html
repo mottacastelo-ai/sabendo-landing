@@ -92,17 +92,17 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 16px;
+      gap: 12px;
       margin-bottom: 20px;
     }
-    .hero-logo img { height: 88px; width: auto; }
+    .hero-logo img { height: 52px; width: auto; }
 
     .hero-title {
       font-family: 'Syne', sans-serif;
       font-weight: 800;
-      font-size: clamp(52px, 10vw, 96px);
+      font-size: clamp(40px, 11vw, 96px);
       color: var(--branco);
-      letter-spacing: -3px;
+      letter-spacing: -2px;
       line-height: 1;
     }
     .hero-title .dot { color: var(--verde); }
@@ -111,7 +111,7 @@
       font-family: 'DM Sans', sans-serif;
       font-weight: 300;
       font-style: italic;
-      font-size: clamp(15px, 2.5vw, 20px);
+      font-size: clamp(14px, 3.5vw, 20px);
       color: rgba(255,255,255,0.5);
       margin-top: 14px;
     }
@@ -124,18 +124,22 @@
     /* PORTAIS */
     .portais {
       background: var(--preto);
-      padding: 64px 24px;
+      padding: 48px 16px;
     }
 
     .portais-inner {
       display: flex;
-      gap: 24px;
+      flex-direction: column;
+      gap: 16px;
       max-width: 860px;
       margin: 0 auto;
     }
 
-    @media (max-width: 640px) {
-      .portais-inner { flex-direction: column; }
+    @media (min-width: 640px) {
+      .portais-inner { flex-direction: row; gap: 24px; }
+      .portais { padding: 64px 24px; }
+      .hero-logo img { height: 88px; }
+      .hero-title { letter-spacing: -3px; }
     }
 
     .card {
@@ -143,7 +147,7 @@
       background: rgba(255,255,255,0.04);
       border: 1px solid rgba(255,255,255,0.08);
       border-radius: 20px;
-      padding: 36px;
+      padding: 24px;
       text-decoration: none;
       color: var(--branco);
       display: flex;
@@ -175,7 +179,7 @@
     .card-name {
       font-family: 'Syne', sans-serif;
       font-weight: 800;
-      font-size: 32px;
+      font-size: clamp(24px, 6vw, 32px);
       color: var(--branco);
       margin-bottom: 6px;
     }
