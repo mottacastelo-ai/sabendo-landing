@@ -178,18 +178,27 @@
       50%       { transform: translateY(6px); opacity: 0.8; }
     }
     .scroll-hint {
-      position: absolute;
-      bottom: 28px;
-      left: 50%;
-      transform: translateX(-50%);
-      color: rgba(255,255,255,0.4);
-      animation: bounce 1.8s ease-in-out infinite;
-      animation-delay: 3s;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      margin-top: 32px;
+      color: rgba(255,255,255,0.65);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
       opacity: 0;
-      transition: opacity 0.4s;
+      transition: opacity 0.5s;
       cursor: pointer;
+      animation: bounce 1.8s ease-in-out infinite;
+      animation-play-state: paused;
     }
-    .scroll-hint.visible { opacity: 1; }
+    .scroll-hint.visible {
+      opacity: 1;
+      animation-play-state: running;
+    }
+    .scroll-hint svg { display: block; }
 
     /* PORTAIS */
     .portais {
@@ -365,9 +374,10 @@
       </div>
       <p class="hero-tagline">Suas matérias <strong>viram game.</strong></p>
     </div>
-    <div class="scroll-hint" aria-hidden="true">
-      <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-        <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <div class="scroll-hint">
+      <span>ver portais</span>
+      <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+        <path d="M7 11L14 18L21 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
     </div>
   </section>
